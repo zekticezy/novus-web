@@ -1,3 +1,7 @@
+<!-- This is a template, meant for usage if you're making a new page for the novus.zekkied.dev site -->
+<!-- Make a copy of this file, delete these comments and type away! -->
+<!-- - zekkie, most recent template version is from 25/07/2024 at 19:08 (GMT+2) -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,48 +31,18 @@
             <button class="download-button">Download</button>
         </nav>
     </header>
-    <main id="overview">
-        <img src="img/Novus Text (White).png">
-        <h2>Your New Music Workstation.<br>Always Free. Always Yours.</h2>
-        <div class="download-container">
-            <button id="download-button" class="download-button">Download for {operating system}</button>
-            <a id="source-code-link" href="https://github.com/zekticezy/novus" class="source-code-link">See the source code</a>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="features" id="features">
-            <div class="feature-container">
-                <div class="feature-item">
-                    <p class="feature-text">Various tools for songwriting,<br>beat-making, editing, and mixing.</p>
-                </div>
-                <div class="feature-item">
-                    <p class="feature-text">Massive Integrated Support for VSTs<br>and DLLs. Import as many as you'd like.</p>
-                </div>
-            </div>
-            <div class="feature-container">
-                <div class="feature-item">
-                    <p class="feature-text">Simple, but powerful,<br>and an easy-to-learn user interface,<br>focusing on workflow.</p>
-                </div>
-                <div class="feature-item">
-                    <p class="feature-text">A vast library of sounds and effects,<br>ready to use upon installation.</p>
-                </div>
-            </div>
-            <div class="feature-container">
-                <div class="feature-item">
-                    <p class="feature-text">Your studio will always be in session<br>with tools ready for audio and instrument recordings.</p>
-                </div>
-                <div class="feature-item">
-                    <p class="feature-text">Never lose an idea - write whatever comes to mind<br>with our built-in notepad, and come back to it at any time.</p>
-                </div>
-            </div>
-        </div>
+
+    <main>
+        <!-- Main content goes here -->
     </main>
+
     <footer>
-        <br><br><br>
+        <hr class="line-break">
         <div class="footer-content">
             <div class="footer-sections">
                 <div class="footer-section">
                     <div class="breadcrumb">
-                        <a href="https://zekkie.dev"><strong>[zekkie.dev]</strong></a> > <a href="https://zekkie.dev/projects.html">[projects]</a> > [Novus]
+                        <a href="https://zekkie.dev"><strong>[zekkie.dev]</strong></a> > <a href="https://zekkie.dev/projects.html"><strong>[projects]</strong></a> > [Novus]
                     </div>
                     <hr class="line-break">
                     <div class="footer-text">
@@ -99,13 +73,9 @@
             <div class="footer-bottom-text">
                 website and software developed by [zekticezy]. page hosted by GitHub. please don't copy or steal, that wouldn't be very fun, would it not?
             </div>
-            <br><br>
         </div>
     </footer>
-    
-    
-    
-    
+
     <script>
         function getOperatingSystem() {
             const userAgent = window.navigator.userAgent;
@@ -133,9 +103,9 @@
             // Linux detection (RPM and DEB)
             if (userAgent.indexOf('Linux') !== -1) {
                 if (userAgent.indexOf('Red Hat') !== -1 || userAgent.indexOf('Fedora') !== -1) {
-                    return 'Linux (Red Hat/Fedora)';
+                    return 'Linux (RPM)';
                 }
-                return 'Linux (Debian)';
+                return 'Linux (DEB)';
             }
     
             return 'your operating system';
@@ -144,15 +114,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const os = getOperatingSystem();
             const downloadButton = document.getElementById('download-button');
-            
-            // Check if the device is mobile
-            if (/iPad|iPhone|iPod|Android/i.test(window.navigator.userAgent)) {
-                downloadButton.textContent = 'Send me a link to download';
-            } else {
-                downloadButton.textContent = `Download for ${os}`;
-            }
+            downloadButton.textContent = `Download for ${os}`;
         });
-    
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -162,20 +126,20 @@
                 });
             });
         });
-    
+
         // Update active link based on scroll position
         document.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('main > *');
             const navLinks = document.querySelectorAll('.nav-links a');
             let current = '';
-    
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 if (pageYOffset >= sectionTop - 10) {
                     current = section.getAttribute('id');
                 }
             });
-    
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href').substring(1) === current) {
@@ -183,6 +147,6 @@
                 }
             });
         });
-    </script>    
+    </script>
 </body>
 </html>
