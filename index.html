@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novus Project</title>
+    <title>Novus Project - zekkie.dev</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/novusblack.ico" type="image/x-icon">
 </head>
@@ -18,43 +18,164 @@
     <header class="sub-header">
         <img src="img/Novus Text.png" alt="Novus Logo" class="logo">
         <nav class="nav-links">
-            <a href="#" class="default-underline">Overview</a>
-            <a href="#">Features</a>
+            <a href="#overview" class="default-underline">Overview</a>
+            <a href="#features">Features</a>
             <a href="#">Resources</a>
             <a href="#">Plugins</a>
             <a href="#">Updates</a>
-            <a href="#">Source Code</a>
+            <a href="https://github.com/zekticezy/novus">Source Code</a>
             <button class="download-button">Download</button>
         </nav>
     </header>
-
-    <main>
-        <h1>Novus</h1>
-        <h2>Creativity. Free, forever.</h2>
+    <main id="overview">
+        <img src="img/Novus Text (White).png">
+        <h2>Your New Music Workstation.<br>Always Free. Always Yours.</h2>
         <div class="download-container">
             <button id="download-button" class="download-button">Download for {operating system}</button>
             <a id="source-code-link" href="https://github.com/zekticezy/novus" class="source-code-link">See the source code</a>
         </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="features" id="features">
+            <div class="feature-container">
+                <div class="feature-item">
+                    <p class="feature-text">Various tools for songwriting,<br>beat-making, editing, and mixing.</p>
+                </div>
+                <div class="feature-item">
+                    <p class="feature-text">Massive Integrated Support for VSTs<br>and DLLs. Import as many as you'd like.</p>
+                </div>
+            </div>
+            <div class="feature-container">
+                <div class="feature-item">
+                    <p class="feature-text">Simple, but powerful,<br>and an easy-to-learn user interface,<br>focusing on workflow.</p>
+                </div>
+                <div class="feature-item">
+                    <p class="feature-text">A vast library of sounds and effects,<br>ready to use upon installation.</p>
+                </div>
+            </div>
+            <div class="feature-container">
+                <div class="feature-item">
+                    <p class="feature-text">Your studio will always be in session<br>with tools ready for audio and instrument recordings.</p>
+                </div>
+                <div class="feature-item">
+                    <p class="feature-text">Never lose an idea - write whatever comes to mind<br>with our built-in notepad, and come back to it at any time.</p>
+                </div>
+            </div>
+        </div>
     </main>
-
+    <footer>
+        <br><br><br>
+        <div class="footer-content">
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <div class="breadcrumb">
+                        <a href="https://zekkie.dev"><strong>[zekkie.dev]</strong></a> > <a href="https://zekkie.dev/projects.html">[projects]</a> > [Novus]
+                    </div>
+                    <hr class="line-break">
+                    <div class="footer-text">
+                        <strong>[everything zekkie.dev]</strong>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://zekkie.dev/videos/">videos</a>
+                        <a href="https://zekkie.dev/contact/">contact</a>
+                        <a href="https://zekkie.dev/projects/">projects</a>
+                    </div>
+                </div>
+                <div class="footer-section right">
+                    <div class="footer-text">
+                        <strong>[connect]</strong>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://youtube.com/@zekticezy">youtube</a>
+                        <a href="https://twitter.com/zekticezy">twitter</a>
+                        <a href="https://twitch.tv/zekticezy">twitch</a>
+                        <a href="https://github.com/zekticezy">github</a>
+                        <a href="https://discord.gg/yutSw6QEdH">discord server</a>
+                        <a href="https://open.spotify.com/artist/3ZVjhxUwlPDKh7YXSZetUs">spotify</a>
+                        <a href="https://music.apple.com/us/artist/zekkie/1747365233">apple music</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="line-break">
+            <div class="footer-bottom-text">
+                website and software developed by [zekticezy]. page hosted by GitHub. please don't copy or steal, that wouldn't be very fun, would it not?
+            </div>
+            <br><br>
+        </div>
+    </footer>
+    
+    
+    
+    
     <script>
         function getOperatingSystem() {
             const userAgent = window.navigator.userAgent;
-            if (userAgent.indexOf('Win') !== -1) return 'Windows';
-            if (userAgent.indexOf('Mac') !== -1) return 'macOS';
+    
+            // iOS devices detection
+            if (/iPad|iPhone|iPod/.test(userAgent)) {
+                return 'Send me a link to download';
+            }
+    
+            // Android devices detection
+            if (/Android/i.test(userAgent)) {
+                return 'Send me a link to download';
+            }
+    
+            // Windows detection
+            if (userAgent.indexOf('Win') !== -1) {
+                return 'Windows';
+            }
+    
+            // macOS detection
+            if (userAgent.indexOf('Mac') !== -1) {
+                return 'macOS';
+            }
+    
+            // Linux detection (RPM and DEB)
             if (userAgent.indexOf('Linux') !== -1) {
-                if (userAgent.indexOf('Red Hat') !== -1 || userAgent.indexOf('Fedora') !== -1) return 'Linux (RPM)';
+                if (userAgent.indexOf('Red Hat') !== -1 || userAgent.indexOf('Fedora') !== -1) {
+                    return 'Linux (RPM)';
+                }
                 return 'Linux (DEB)';
             }
-            if (/Android/i.test(userAgent)) return 'Send me a link to download';
-            if (/iPad|iPhone|iPod/.test(userAgent)) return 'Send me a link to download';
+    
             return 'your operating system';
         }
-
+    
         document.addEventListener('DOMContentLoaded', function() {
             const os = getOperatingSystem();
             const downloadButton = document.getElementById('download-button');
             downloadButton.textContent = `Download for ${os}`;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update active link based on scroll position
+        document.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('main > *');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 10) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>

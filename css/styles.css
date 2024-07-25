@@ -16,6 +16,10 @@ header.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
 }
 
 .header-content {
@@ -27,6 +31,12 @@ header.main-header {
 
 .header-content .left {
     font-size: 1.2em;
+}
+
+.header-content .right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
 }
 
 .header-content .right a {
@@ -42,16 +52,23 @@ header.sub-header {
     align-items: center;
     border-bottom: 1px solid #ddd;
     font-family: Inter;
+    position: fixed;
+    width: 100%;
+    top: 50px; /* Set to the exact height of the main-header */
+    z-index: 1000;
+    margin: 0;
 }
 
 .sub-header .logo {
-    height: 50px; /* Adjust as needed */
+    height: 40px;
+    margin-right: 20px;
 }
 
 .nav-links {
-    margin-left: auto;
     display: flex;
+    margin-left: auto;
     align-items: center;
+    margin-right: 20px; /* Spacing between nav links and right edge */
 }
 
 .nav-links a {
@@ -62,12 +79,10 @@ header.sub-header {
     font-family: Inter;
 }
 
-/* Style for the default underlined link */
 .nav-links a.default-underline {
     text-decoration: underline;
 }
 
-/* Hover state */
 .nav-links a:hover {
     text-decoration: underline;
 }
@@ -77,15 +92,27 @@ header.sub-header {
     color: white;
     border: none;
     padding: 10px 20px;
-    margin-left: 20px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 12px;
     font-family: Inter;
+    margin-left: 20px; /* Spacing between button and nav links */
 }
 
 .download-button:hover {
     background-color: #009ed3;
+}
+
+.source-code-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: Inter;
+    transition-duration: 5ms;
+}
+
+.source-code-link:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -96,28 +123,29 @@ main {
     align-items: center;
     color: white;
     text-align: center;
-    padding: 20px; /* Optional padding for better spacing */
+    padding: 20px;
+    padding-top: 120px;
 }
 
 main h1 {
     font-family: Inter, sans-serif;
-    font-size: 3em; /* Adjust as needed */
+    font-size: 3em;
     font-weight: bold;
     margin: 0;
-    padding: 80px 0; /* Gap between header and text */
+    padding: 80px 0;
 }
 
 main h2 {
     font-family: Inter, sans-serif;
-    font-size: 2em; /* Adjust as needed */
-    font-weight: bold;
+    font-size: 2em;
+    font-weight: 600;
     color: #a09fa4;
     margin: 0;
-    margin-top: 3px; /* 3px gap between h1 and h2 */
+    margin-top: 2px;
 }
 
 .download-container {
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,7 +160,7 @@ main h2 {
     cursor: pointer;
     border-radius: 12px;
     font-family: Inter;
-    margin-right: 10px; /* Spacing between button and link */
+    margin-right: 10px;
 }
 
 .download-button:hover {
@@ -148,4 +176,152 @@ main h2 {
 
 .source-code-link:hover {
     text-decoration: underline;
+}
+
+.features {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.feature-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-item {
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.feature-text {
+    font-size: 30px;
+    font-weight: 550;
+    text-align: left;
+    font-family: Inter;
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* all things footer related */
+footer {
+    background-color: #1d1d1f;
+    color: #b4b4b5;
+    text-align: left;
+    padding: 20px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the footer content horizontally */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    width: 100%;
+    max-width: 800px; /* Adjust width as needed */
+}
+
+.footer-sections {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Space between sections */
+    flex-direction: column; /* Stack sections vertically */
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left within each section */
+    margin-bottom: 20px; /* Add spacing between sections */
+}
+
+.footer-section.right {
+    align-items: flex-start; /* Align items to the left for the "connect" section */
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
+}
+
+.breadcrumb a {
+    color: #b4b4b5;
+    text-decoration: none; /* Remove underline from breadcrumb links */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.line-break {
+    border: none; /* Remove default border */
+    border-top: 2px solid #535355; /* Set custom border color */
+    margin: 10px 0;
+    width: 100%; /* Full width of the container */
+    max-width: 800px; /* Match the width of the footer content */
+    background-color: #1d1d1f; /* Ensure background color matches footer */
+}
+
+.footer-text {
+    margin-bottom: 10px;
+}
+
+.footer-text strong {
+    color: #ffffff;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #b4b4b5;
+    text-decoration: none; /* Remove underline from footer links */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-bottom-text {
+    font-size: 0.9em;
+    color: #b4b4b5;
+    margin-top: 10px;
+    width: 100%; /* Ensure it takes full width of the container */
+    max-width: 800px; /* Match the width of the footer content */
+    text-align: center; /* Center text horizontally */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-sections {
+        flex-direction: column; /* Stack sections vertically on mobile */
+        align-items: center;
+    }
+
+    .line-break {
+        max-width: 90%; /* Adjust width for mobile */
+    }
+
+    .footer-section {
+        margin: 0; /* Remove margins for mobile stacking */
+        text-align: center; /* Center text within the section */
+    }
+
+    .footer-section.right {
+        margin: 0; /* Remove margins for mobile stacking */
+        text-align: center; /* Center text within the section */
+    }
 }
