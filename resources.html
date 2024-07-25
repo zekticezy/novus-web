@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novus Project - zekkie.dev</title>
-    <link rel="stylesheet" href="css/indexstyles.css">
+    <title>Resources - Novus Project - zekkie.dev</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/novusblack.ico" type="image/x-icon">
 </head>
 <body>
@@ -18,9 +18,9 @@
     <header class="sub-header">
         <img src="img/Novus Text.png" alt="Novus Logo" class="logo">
         <nav class="nav-links">
-            <a href="#overview" class="default-underline">Overview</a>
-            <a href="#features">Features</a>
-            <a href="resources.html">Resources</a>
+            <a href="index.html#overview">Overview</a>
+            <a href="index.html#features">Features</a>
+            <a href="#" class="default-underline">Resources</a>
             <a href="plugins.html">Plugins</a>
             <a href="updates.html">Updates</a>
             <a href="https://github.com/zekticezy/novus">Source Code</a>
@@ -29,48 +29,26 @@
             </a>            
         </nav>
     </header>
-    <main id="overview">
-        <img src="img/Novus Text (White).png">
-        <h2>Your New Music Workstation.<br>Always Free. Always Yours.</h2>
-        <div class="download-container">
-            <button id="download-button" class="download-button">Download for {operating system}</button>
-            <a id="source-code-link" href="https://github.com/zekticezy/novus" class="source-code-link">See the source code</a>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="features" id="features">
-            <div class="feature-container">
-                <div class="feature-item">
-                    <p class="feature-text">Various tools for songwriting,<br>beat-making, editing, and mixing.</p>
-                </div>
-                <div class="feature-item">
-                    <p class="feature-text">Massive Integrated Support for VSTs<br>and DLLs. Import as many as you'd like.</p>
-                </div>
-            </div>
-            <div class="feature-container">
-                <div class="feature-item">
-                    <p class="feature-text">Simple, but powerful,<br>and an easy-to-learn user interface,<br>focusing on workflow.</p>
-                </div>
-                <div class="feature-item">
-                    <p class="feature-text">A vast library of sounds and effects,<br>ready to use upon installation.</p>
-                </div>
-            </div>
-            <div class="feature-container">
-                <div class="feature-item">
-                    <p class="feature-text">Your studio will always be in session<br>with tools ready for audio and instrument recordings.</p>
-                </div>
-                <div class="feature-item">
-                    <p class="feature-text">Never lose an idea - write whatever comes to mind<br>with our built-in notepad, and come back to it at any time.</p>
-                </div>
-            </div>
+
+    <main>
+        <h1>Resources</h1>
+        <h2>Want to get yourself familiar with how Novus works? <br>This is the place!</h2>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="pdf-section">
+            <p class="pdf-title">THE ULTIMATE HANDBOOK</p>
+            <h2 class="pdf-header">A Beginner's Guide to Novus (PDF/HTML)</h2>
+            <h4 class="pdf-description">A short, but useful PDF handbook for Novus, showing everything you need, and even accessible offline.</h4>
+            <button class="pdf-download-button">Download</button>
         </div>
     </main>
+
     <footer>
-        <br><br><br>
+        <hr class="line-break">
         <div class="footer-content">
             <div class="footer-sections">
                 <div class="footer-section">
                     <div class="breadcrumb">
-                        <a href="https://zekkie.dev"><strong>[zekkie.dev]</strong></a> > <a href="https://zekkie.dev/projects.html">[projects]</a> > [Novus]
+                        <a href="https://zekkie.dev"><strong>[zekkie.dev]</strong></a> > <a href="https://zekkie.dev/projects.html"><strong>[projects]</strong></a> > <a href="https://novus.zekkie.dev"><strong>[Novus]</strong></a> > [resources]
                     </div>
                     <hr class="line-break">
                     <div class="footer-text">
@@ -101,13 +79,9 @@
             <div class="footer-bottom-text">
                 website and software developed by [zekticezy]. page hosted by GitHub. please don't copy or steal, that wouldn't be very fun, would it not?
             </div>
-            <br><br>
         </div>
     </footer>
-    
-    
-    
-    
+
     <script>
         function getOperatingSystem() {
             const userAgent = window.navigator.userAgent;
@@ -135,9 +109,9 @@
             // Linux detection (RPM and DEB)
             if (userAgent.indexOf('Linux') !== -1) {
                 if (userAgent.indexOf('Red Hat') !== -1 || userAgent.indexOf('Fedora') !== -1) {
-                    return 'Linux (Red Hat/Fedora)';
+                    return 'Linux (RPM)';
                 }
-                return 'Linux (Debian)';
+                return 'Linux (DEB)';
             }
     
             return 'your operating system';
@@ -146,15 +120,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const os = getOperatingSystem();
             const downloadButton = document.getElementById('download-button');
-            
-            // Check if the device is mobile
-            if (/iPad|iPhone|iPod|Android/i.test(window.navigator.userAgent)) {
-                downloadButton.textContent = 'Send me a link to download';
-            } else {
-                downloadButton.textContent = `Download for ${os}`;
-            }
+            downloadButton.textContent = `Download for ${os}`;
         });
-    
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -164,20 +132,20 @@
                 });
             });
         });
-    
+
         // Update active link based on scroll position
         document.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('main > *');
             const navLinks = document.querySelectorAll('.nav-links a');
             let current = '';
-    
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 if (pageYOffset >= sectionTop - 10) {
                     current = section.getAttribute('id');
                 }
             });
-    
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href').substring(1) === current) {
@@ -185,6 +153,6 @@
                 }
             });
         });
-    </script>    
+    </script>
 </body>
 </html>
