@@ -1,0 +1,151 @@
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter-VariableFont_slnt,wght.ttf);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header.main-header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content .left {
+    font-size: 1.2em;
+}
+
+.header-content .right a {
+    color: white;
+    text-decoration: underline;
+    font-size: 1em;
+}
+
+header.sub-header {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    font-family: Inter;
+}
+
+.sub-header .logo {
+    height: 50px; /* Adjust as needed */
+}
+
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+    font-family: Inter;
+}
+
+/* Style for the default underlined link */
+.nav-links a.default-underline {
+    text-decoration: underline;
+}
+
+/* Hover state */
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.download-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: Inter;
+}
+
+.download-button:hover {
+    background-color: #009ed3;
+}
+
+main {
+    background: linear-gradient(to bottom, #001125, #000000);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px; /* Optional padding for better spacing */
+}
+
+main h1 {
+    font-family: Inter, sans-serif;
+    font-size: 3em; /* Adjust as needed */
+    font-weight: bold;
+    margin: 0;
+    padding: 80px 0; /* Gap between header and text */
+}
+
+main h2 {
+    font-family: Inter, sans-serif;
+    font-size: 2em; /* Adjust as needed */
+    font-weight: bold;
+    color: #a09fa4;
+    margin: 0;
+    margin-top: 3px; /* 3px gap between h1 and h2 */
+}
+
+.download-container {
+    margin-top: 20px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: Inter;
+    margin-right: 10px; /* Spacing between button and link */
+}
+
+.download-button:hover {
+    background-color: #009ed3;
+}
+
+.source-code-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: Inter;
+}
+
+.source-code-link:hover {
+    text-decoration: underline;
+}

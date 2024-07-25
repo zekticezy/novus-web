@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novus Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/novusblack.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="left">[zekkie.dev]</div>
+            <div class="right"><a href="https://zekkie.dev"> < go back to homepage</a></div>
+        </div>
+    </header>
+
+    <header class="sub-header">
+        <img src="img/Novus Text.png" alt="Novus Logo" class="logo">
+        <nav class="nav-links">
+            <a href="#" class="default-underline">Overview</a>
+            <a href="#">Features</a>
+            <a href="#">Resources</a>
+            <a href="#">Plugins</a>
+            <a href="#">Updates</a>
+            <a href="#">Source Code</a>
+            <button class="download-button">Download</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Novus</h1>
+        <h2>Creativity. Free, forever.</h2>
+        <div class="download-container">
+            <button id="download-button" class="download-button">Download for {operating system}</button>
+            <a id="source-code-link" href="https://github.com/zekticezy/novus" class="source-code-link">See the source code</a>
+        </div>
+    </main>
+
+    <script>
+        function getOperatingSystem() {
+            const userAgent = window.navigator.userAgent;
+            if (userAgent.indexOf('Win') !== -1) return 'Windows';
+            if (userAgent.indexOf('Mac') !== -1) return 'macOS';
+            if (userAgent.indexOf('Linux') !== -1) {
+                if (userAgent.indexOf('Red Hat') !== -1 || userAgent.indexOf('Fedora') !== -1) return 'Linux (RPM)';
+                return 'Linux (DEB)';
+            }
+            if (/Android/i.test(userAgent)) return 'Send me a link to download';
+            if (/iPad|iPhone|iPod/.test(userAgent)) return 'Send me a link to download';
+            return 'your operating system';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const os = getOperatingSystem();
+            const downloadButton = document.getElementById('download-button');
+            downloadButton.textContent = `Download for ${os}`;
+        });
+    </script>
+</body>
+</html>
