@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Inter;
-    src: url(fonts/Inter-VariableFont_slnt,wght.ttf);
+    font-family: Josefin;
+    src: url(fonts/JosefinSans-VariableFont_wght.ttf);
 }
 
 body, html {
@@ -51,7 +51,7 @@ header.sub-header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ddd;
-    font-family: Inter;
+    font-family: Josefin;
     position: fixed;
     width: 100%;
     top: 50px; /* Set to the exact height of the main-header */
@@ -76,7 +76,7 @@ header.sub-header {
     text-decoration: none;
     margin-left: 20px;
     font-size: 1em;
-    font-family: Inter;
+    font-family: Josefin;
 }
 
 .nav-links a.default-underline {
@@ -95,7 +95,7 @@ header.sub-header {
     font-size: 1em;
     cursor: pointer;
     border-radius: 12px;
-    font-family: Inter;
+    font-family: Josefin;
     margin-left: 20px; /* Spacing between button and nav links */
 }
 
@@ -107,7 +107,7 @@ header.sub-header {
     color: #007bff;
     text-decoration: none;
     font-size: 1em;
-    font-family: Inter;
+    font-family: Josefin;
     transition-duration: 5ms;
 }
 
@@ -134,7 +134,7 @@ main .resource s {
 }
 
 main h1 {
-    font-family: Inter, sans-serif;
+    font-family: Josefin;
     font-size: 3em;
     font-weight: bold;
     margin: 0;
@@ -142,7 +142,7 @@ main h1 {
 }
 
 main h2 {
-    font-family: Inter, sans-serif;
+    font-family: Josefin;
     font-size: 2em;
     font-weight: 600;
     color: #a09fa4;
@@ -165,7 +165,7 @@ main h2 {
     font-size: 1em;
     cursor: pointer;
     border-radius: 12px;
-    font-family: Inter;
+    font-family: Josefin;
     margin-right: 10px;
 }
 
@@ -177,7 +177,7 @@ main h2 {
     color: #007bff;
     text-decoration: none;
     font-size: 1em;
-    font-family: Inter;
+    font-family: Josefin;
 }
 
 .source-code-link:hover {
@@ -205,7 +205,7 @@ main h2 {
     font-size: 30px;
     font-weight: 550;
     text-align: left;
-    font-family: Inter;
+    font-family: Josefin;
 }
 
 @media (max-width: 768px) {
